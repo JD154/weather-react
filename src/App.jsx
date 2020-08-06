@@ -1,3 +1,4 @@
+/* eslint-disable radix */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Search from './components/Search/Search';
@@ -7,7 +8,7 @@ import './App.css';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('New York');
-  const [weather, setWeather] = useState('');
+  const [weather, setWeather] = useState({});
 
   const api = {
     URL: 'https://api.openweathermap.org/data/2.5',
@@ -17,8 +18,18 @@ function App() {
   useEffect(() => {
     axios.get(`${api.URL}/weather?q=${searchQuery}&units=metric&APPID=${api.KEY}`)
       .then((res) => {
-        setWeather(res.data);
-        console.table(res.data);
+        const weatherData = {
+          clouds: res.data.weather[0].main,
+          icon: res.data.weather[0].icon,
+          temp: parseInt(res.data.main.temp),
+          feelsLike: parseInt(res.data.main.feels_like),
+          minTemp: parseInt(res.data.main.temp_min),
+          maxTemp: parseInt(res.data.main.temp_max),
+          humidity: res.data.main.humidity,
+          city: res.data.name,
+          country: res.data.sys.country,
+        };
+        setWeather(weatherData);
       })
       .catch((err) => {
         console.log(err);
