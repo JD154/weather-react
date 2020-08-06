@@ -1,0 +1,19 @@
+.searchWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+
+  &>span {
+    border: 1px solid #e3e5f0;
+    border-radius: 8px;
+  }
+
+  &>span,
+  &>span>input {
+    background-color: #ECF5FE;
+  }
+
+  &>span>span>span::before {
+    border-left: 1px solid #e3e5f0;
+  }
+}
