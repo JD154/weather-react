@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import SearchBox from './components/SearchBox/SearchBox';
-import CurrentWeather from './components/CurrentWeather/CurrentWeather';
-import WeekWeather from './components/WeekWeather/WeekWeather';
+import Search from './components/Search/Search';
+import Weather from './components/Weather/Weather';
+import Forecast from './components/Forecast/Forecast';
 import './App.css';
 
 function App() {
-  const [searchQuery, setSearchQuery] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('New York');
   const [weather, setWeather] = useState('');
 
   const api = {
@@ -15,22 +15,21 @@ function App() {
   };
 
   useEffect(() => {
-    if (searchQuery) {
-      axios.get(`${api.URL}/weather?q=${searchQuery}&units=metric&APPID=${api.KEY}`)
-        .then((res) => {
-          setWeather(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+    axios.get(`${api.URL}/weather?q=${searchQuery}&units=metric&APPID=${api.KEY}`)
+      .then((res) => {
+        setWeather(res.data);
+        console.table(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [searchQuery]);
 
   return (
     <div className="App">
-      <SearchBox searchQuery={setSearchQuery} />
-      <CurrentWeather weather={weather} />
-      <WeekWeather weather={weather} />
+      <Search searchQuery={setSearchQuery} />
+      <Weather weather={weather} />
+      <Forecast weather={weather} />
     </div>
   );
 }

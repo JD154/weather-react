@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './WeekWeather.module.scss';
+import styles from './Forecast.module.scss';
 
-const WeekWeather = (props) => {
+const Forecast = (props) => {
   const { main } = props;
 
   return (
@@ -11,4 +11,4 @@ const WeekWeather = (props) => {
   );
 };
 
-export default WeekWeather;
+export default Forecast;

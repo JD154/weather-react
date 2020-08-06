@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input } from 'antd';
 
-import styles from './SearchBox.module.scss';
+import styles from './Search.module.scss';
 
 const { Search } = Input;
 
