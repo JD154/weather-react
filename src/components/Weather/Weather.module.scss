@@ -11,12 +11,19 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 1024px) {
+  .infoWrapper {
+    flex-direction: row;
+  }
 }
 
 .weatherTemp {
   display: flex;
   align-items: center;
-  border-right: 1px solid #e3e5f0;
+
   padding: 0 8px;
 
   & > img {
@@ -37,6 +44,12 @@
   }
 }
 
+@media only screen and (min-width: 1024px) {
+  .weatherTemp {
+    border-right: 1px solid #e3e5f0;
+  }
+}
+
 .weatherInfo {
   display: flex;
   flex-direction: column;
@@ -53,9 +66,16 @@
   font-size: 1.5em;
   font-style: italic;
   font-weight: 400;
+  text-align: center;
 
   &::first-letter {
     text-transform: capitalize;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .clouds {
+    text-align: left;
   }
 }
 
