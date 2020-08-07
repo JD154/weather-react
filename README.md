@@ -1,6 +1,6 @@
 # Weather react
 
-![](Product_show.png)
+![](product_show.png)
 
 Weather react uses [OpenWeatherMap API](https://openweathermap.org/api) to get weather based in your input.
 
