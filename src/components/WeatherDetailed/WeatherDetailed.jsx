@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTemperatureHigh, faThermometer, faTemperatureLow, faTint,
@@ -45,6 +45,16 @@ const WeatherDetailed = ({ weather, isFahrenheit }) => {
       </div>
     </div>
   );
+};
+
+WeatherDetailed.propTypes = {
+  weather: PropTypes.shape({
+    feelsLike: PropTypes.number,
+    minTemp: PropTypes.number,
+    maxTemp: PropTypes.number,
+    humidity: PropTypes.number,
+  }).isRequired,
+  isFahrenheit: PropTypes.bool.isRequired,
 };
 
 export default WeatherDetailed;

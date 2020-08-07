@@ -49,8 +49,13 @@ const Weather = ({ weather, fahrenheit, isFahrenheit }) => {
 };
 
 Weather.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  weather: PropTypes.object.isRequired,
+  weather: PropTypes.shape({
+    icon: PropTypes.string,
+    clouds: PropTypes.string,
+    temp: PropTypes.number,
+    city: PropTypes.string,
+    country: PropTypes.string,
+  }).isRequired,
   fahrenheit: PropTypes.func.isRequired,
   isFahrenheit: PropTypes.bool.isRequired,
 };
