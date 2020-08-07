@@ -1,0 +1,37 @@
+.weekWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #ebf8ff;
+  height: 150px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  padding: 0 20px;
+}
+
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > svg {
+    font-size: 1.5em;
+    margin-bottom: 12px;
+    color: #a0aec0;
+  }
+
+  & > p {
+    margin: 0;
+  }
+}
+
+.info {
+  font-size: 1.7em;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.infoLabel {
+  font-size: 1em;
+  color: #a0aec0;
+}
