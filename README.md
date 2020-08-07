@@ -18,6 +18,7 @@ This is part of a series of self-taught projects to consolidate my knowledge of 
 - Use useEffect and useState hooks.
 - Conditionally render JSX based in props.
 - Link react logic with components to improve UX.
+- Use PropTypes checking in each component.
 
 ## Running local
 
