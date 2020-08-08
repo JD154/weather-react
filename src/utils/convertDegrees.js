@@ -4,10 +4,6 @@ export default function convertDegrees(temp, isFahrenheit) {
     return Math.round(convertedTemp, 10);
   }
 
-  if (!isFahrenheit) {
-    const convertedTemp = ((temp - 32) / 1.8);
-    return Math.round(convertedTemp, 10);
-  }
-
-  return temp;
+  const convertedTemp = ((temp - 32) / 1.8);
+  return Math.round(convertedTemp, 10);
 }
