@@ -26,19 +26,19 @@
 
   padding: 0 8px;
 
-  & > img {
+  &>img {
     height: 70px;
     width: auto;
     margin-right: 16px;
   }
 
-  & > p {
+  &>p {
     font-weight: 700;
     font-size: 5em;
     color: #4a5568;
     margin: 0;
 
-    & > span {
+    &>span {
       margin-left: 8px;
     }
   }
@@ -57,7 +57,7 @@
   padding: 0 24px;
   color: #718096;
 
-  & > p {
+  &>p {
     margin: 0;
   }
 }
@@ -83,7 +83,11 @@
   font-size: 2.5em;
   font-weight: 400;
 
-  & > span > svg {
+  &>span {
+    margin-right: 3px;
+  }
+
+  &>span>svg {
     font-size: 0.7em;
     margin-right: 8px;
     vertical-align: baseline;
@@ -95,11 +99,11 @@
   justify-content: center;
   margin-top: 32px;
 
-  & > button {
+  &>button {
     margin: 0 8px;
   }
 
-  & > span {
+  &>span {
     color: #a0aec0;
   }
 }

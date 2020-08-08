@@ -1,19 +1,19 @@
 .searchWrapper {
   display: flex;
   justify-content: center;
-  padding: 24px 0;
+  padding: 24px 0 0 0;
 
-  & > span {
+  &>span {
     border: 1px solid #e3e5f0;
     border-radius: 8px;
   }
 
-  & > span,
-  & > span > input {
+  &>span,
+  &>span>input {
     background-color: #f7fafc;
   }
 
-  & > span > span > span::before {
+  &>span>span>span::before {
     border-left: 1px solid #e3e5f0;
   }
 }

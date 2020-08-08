@@ -30,9 +30,8 @@ const Weather = ({ weather, fahrenheit, isFahrenheit }) => {
             <span>
               <FontAwesomeIcon className={styles.locationIcon} icon={faMapMarkerAlt} />
               {weather.city}
+              ,
             </span>
-            ,
-
             {weather.country}
           </p>
         </div>
