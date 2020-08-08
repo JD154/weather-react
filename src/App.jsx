@@ -5,7 +5,7 @@ import axios from 'axios';
 import Search from './components/Search/Search';
 import Weather from './components/Weather/Weather';
 import WeatherDetailed from './components/WeatherDetailed/WeatherDetailed';
-import convertDegrees from './Utils/convertDegrees';
+import convertDegrees from './utils/convertDegrees';
 
 import './App.css';
 

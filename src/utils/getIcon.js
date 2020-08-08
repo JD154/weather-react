@@ -4,6 +4,8 @@ import cloudsDay from '../assets/icons/02d.png';
 import cloudsNight from '../assets/icons/02n.png';
 import cloudyDay from '../assets/icons/03d.png';
 import cloudyNight from '../assets/icons/03n.png';
+import brokenDay from '../assets/icons/04d.png';
+import brokenNight from '../assets/icons/04n.png';
 import rainDay from '../assets/icons/09d.png';
 import rainNight from '../assets/icons/09n.png';
 import rainyDay from '../assets/icons/10d.png';
@@ -27,6 +29,10 @@ export default function getIcon(iconCode) {
   if (iconCode === '03d') { return cloudyDay; }
 
   if (iconCode === '03n') { return cloudyNight; }
+
+  if (iconCode === '04d') { return brokenDay; }
+
+  if (iconCode === '04n') { return brokenNight; }
 
   if (iconCode === '09d') { return rainDay; }
 

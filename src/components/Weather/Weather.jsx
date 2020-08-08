@@ -4,7 +4,7 @@ import { Switch } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import styles from './Weather.module.scss';
-import getIcon from '../../Utils/getIcon';
+import getIcon from '../../utils/getIcon';
 
 const Weather = ({ weather, fahrenheit, isFahrenheit }) => {
   const fahrenheitHandler = (e) => {
