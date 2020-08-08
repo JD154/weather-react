@@ -16,11 +16,12 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
+  const api = {
+    URL: 'https://api.openweathermap.org/data/2.5',
+    KEY: 'ba253410b2c2380ef1c49aacd2cd2bd8',
+  };
+
   useEffect(() => {
-    const api = {
-      URL: 'https://api.openweathermap.org/data/2.5',
-      KEY: 'ba253410b2c2380ef1c49aacd2cd2bd8',
-    };
     setIsLoading(true);
     axios.get(`${api.URL}/weather?q=${searchQuery}&units=metric&APPID=${api.KEY}`)
       .then((res) => {
@@ -77,10 +78,29 @@ function App() {
 
   return (
     <div className="App">
-      <div className="error">{error ? (<Alert message="Can't fetch your request" type="error" closeText="Close Now" />) : ''}</div>
-      <Search searchQuery={setSearchQuery} isLoading={isLoading} isFahrenheit={isFahrenheit} />
-      <Weather weather={weather} fahrenheit={setisFahrenheit} isFahrenheit={isFahrenheit} />
-      <WeatherDetailed weather={weather} isFahrenheit={isFahrenheit} />
+      <div className="error">
+        {error ? (
+          <Alert
+            message="Can't fetch your request"
+            type="error"
+            closeText="Close Now"
+          />
+        ) : ''}
+      </div>
+      <Search
+        searchQuery={setSearchQuery}
+        isLoading={isLoading}
+        isFahrenheit={isFahrenheit}
+      />
+      <Weather
+        weather={weather}
+        fahrenheit={setisFahrenheit}
+        isFahrenheit={isFahrenheit}
+      />
+      <WeatherDetailed
+        weather={weather}
+        isFahrenheit={isFahrenheit}
+      />
     </div>
   );
 }
