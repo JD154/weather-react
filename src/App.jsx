@@ -24,7 +24,7 @@ function App() {
   });
   const [isFahrenheit, setisFahrenheit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState({});
 
   const api = {
     URL: 'https://api.openweathermap.org/data/2.5',
@@ -33,6 +33,7 @@ function App() {
 
   useEffect(() => {
     if (searchQuery !== '') {
+      setError({ err: false, msg: '' });
       setIsLoading(true);
       axios.get(`${api.URL}/weather?q=${searchQuery}&units=metric&APPID=${api.KEY}`)
         .then((res) => {
@@ -52,7 +53,7 @@ function App() {
         })
         .catch((err) => {
           setIsLoading(false);
-          setError(true);
+          setError({ err: true, msg: err.message });
           // eslint-disable-next-line no-console
           console.log(err);
         });
@@ -81,11 +82,12 @@ function App() {
   return (
     <div className="App">
       <div className="error">
-        {error ? (
+        {error.err ? (
           <Alert
-            message="Can't fetch your request"
+            message={error.msg}
             type="error"
             closeText="Close Now"
+            showIcon
           />
         ) : ''}
       </div>
