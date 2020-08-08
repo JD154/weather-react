@@ -29,6 +29,10 @@
   font-size: 1.7em;
   font-weight: 600;
   color: #4a5568;
+
+  &>span {
+    margin-left: 3px;
+  }
 }
 
 .infoLabel {

@@ -39,7 +39,7 @@ const WeatherDetailed = ({ weather, isFahrenheit }) => {
         <FontAwesomeIcon icon={faTint} />
         <p className={styles.info}>
           {weather.humidity}
-          %
+          <span>%</span>
         </p>
         <p className={styles.infoLabel}>Humidty</p>
       </div>
