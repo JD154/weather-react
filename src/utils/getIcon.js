@@ -1,3 +1,4 @@
+import noData from '../assets/icons/00.png';
 import clearDay from '../assets/icons/01d.png';
 import clearNight from '../assets/icons/01n.png';
 import cloudsDay from '../assets/icons/02d.png';
@@ -18,6 +19,8 @@ import mistDay from '../assets/icons/50d.png';
 import mistNight from '../assets/icons/50n.png';
 
 export default function getIcon(iconCode) {
+  if (iconCode === '00') { return noData; }
+
   if (iconCode === '01d') { return clearDay; }
 
   if (iconCode === '01n') { return clearNight; }
